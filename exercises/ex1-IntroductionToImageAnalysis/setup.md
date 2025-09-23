@@ -14,7 +14,7 @@ To edit the code given in this course we use VS Code, but if you are more famili
 When you have installed Conda and VS Code, you can start by creating a **virtual environment**. A virtual environment is a practical way of keeping a specific Python interpreter, installed libraries and scrips isolated. So if you have several projects that each requires different libraries, they can be kept separate.
 
 ### Creating and activating a conda environment
-Start an **Anaconda prompt** and do:
+Start an **VS Code terminal** and do:
 
 ```Shell
 conda create --name course02503 python=3.10
@@ -56,7 +56,7 @@ print(sys.exec_prefix)
 
 ## Installing Python packages
 
-In this course, we will use several Python packages. We will install them as needed. To install the package [scikit-image (skimage)](https://scikit-image.org/), start an **Anaconda prompt** and do:
+In this course, we will use several Python packages. We will install them as needed. To install the package [scikit-image (skimage)](https://scikit-image.org/), start an **VS Code terminal** and do:
 
 ```Shell
 conda activate course02503
@@ -86,4 +86,5 @@ You can get all the exercise material including the data by (for example):
      cd /path/to/exercise/folder
      git clone https://github.com/RasmusRPaulsen/DTUImageAnalysis.git
      ```
+
 
