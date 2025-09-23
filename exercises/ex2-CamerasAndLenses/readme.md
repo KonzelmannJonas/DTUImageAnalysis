@@ -81,9 +81,14 @@ point, the CCD chip, and Thomas. Do it on paper or even better in a
 drawing program.
 
 1. A focused image of Thomas is formed inside the camera. At which distance from the lens?
+$b = (\frac{1}{f} - \frac{1}{g})^{-1}$
 2. How tall (in mm) will Thomas be on the CCD-chip?
+$B = G * \frac{b}{g}$
 3. What is the size of a single pixel on the CCD chip? (in mm)?
+0.01mm
 4. How tall (in pixels) will Thomas be on the CCD-chip?
+$B \div 0.01mm$
 5. What is the horizontal field-of-view (in degrees)?
+from GPT: $HFOV = 2 * arctan(\frac{w}{2f})$ , with $w$: width of sensor
 6. What is the vertical field-of-view (in degrees)?
-
+same with height
