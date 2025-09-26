@@ -34,6 +34,14 @@ def process_rgb_image(img):
     proc_img[:, :, 0] = 1 - r_comp
     return proc_img
 
+def detect_red_image(img):
+    r_comp = img[:, :, 0]
+    g_comp = img[:, :, 1]
+    b_comp = img[:, :, 2]
+    segm_red = (r_comp > 70) & (r_comp < 180) & (g_comp > 30) & (g_comp < 70) & \
+                (b_comp > 30) & (b_comp < 70)
+    return img_as_ubyte(segm_red)
+
 
 def capture_from_camera_and_show_images():
     print("Starting image capture")
@@ -54,6 +62,7 @@ def capture_from_camera_and_show_images():
     fps = 0
     stop = False
     process_rgb = False
+    process_red = True
     while not stop:
         ret, new_frame = cap.read()
         if not ret:
@@ -67,6 +76,8 @@ def capture_from_camera_and_show_images():
             proc_img = process_rgb_image(new_image)
             # convert back to OpenCV BGR to show it
             proc_img = proc_img[:, :, ::-1]
+        elif process_red:
+            proc_img = detect_red_image(new_image)
         else:
             proc_img = process_gray_image(new_image_gray)
 
