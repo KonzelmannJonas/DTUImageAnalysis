@@ -23,7 +23,12 @@ def process_gray_image(img):
     # https://scikit-image.org/docs/stable/user_guide/data_types.html#image-processing-pipeline
     """
     # Do something here:
-    proc_img = img.copy()
+    size = 3
+    footprint = np.ones([size, size])
+    img = median(img, footprint)
+    proc_img = prewitt(img)
+    T = threshold_otsu(proc_img)
+    proc_img = proc_img > T
     return img_as_ubyte(proc_img)
 
 
