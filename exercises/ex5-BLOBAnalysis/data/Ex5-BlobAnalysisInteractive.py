@@ -13,7 +13,7 @@ def interactive_blobs():
     in_dir = "data/"
     im_name = "lego_4_small.png"
 
-    img_org = io.imread(in_dir + im_name)
+    img_org = io.imread(im_name)
     img = color.rgb2gray(img_org)
     # Binary image, post-process the binary mask and compute labels
     threshold = filters.threshold_otsu(img)
